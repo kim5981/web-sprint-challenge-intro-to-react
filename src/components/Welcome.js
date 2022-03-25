@@ -1,6 +1,8 @@
 import styled from "styled-components";
+import React, { useState, useEffect } from "react"
+import Character from "./Character"
 
-export default function Welcome () {
+export default function Welcome (props) {
 
     // -------------------------------------- STYLING -------------------------------------
     const DivStyle = styled.div `
@@ -37,21 +39,47 @@ export default function Welcome () {
 
     // ------------------------------------------ FN'S + JS --------------------------------------
 
-
+    const { characters, character } = props;
+    const [buttonText, setButtonText] = useState("menu")
     const welcome = "Character Selector"
 
+    // toggle hidden classes
 
+        const toggle = () => {
+            document.querySelector("#charSelect").classList.toggle("hidden")
+            document.querySelector("#charList").classList.toggle("hidden")
+            resetMenu(buttonText)
+        }
 
+        function resetMenu (text) {
+            if (text === "menu") {
+                setButtonText("reset")
+            } else if (text === "reset"){
+                return setButtonText("menu");
+            }
+            return buttonText;
+        }
+    
+
+    // display names
+    function displayNames () {
+        characters.map( character => {
+            return <h2> { character.name } </h2> 
+        }) 
+    }
+    
+// ------------------------------------     render to dom   ---------------------------------
     return (
 
         <DivStyle>
 
-            <CharacterSelector>{ welcome } </CharacterSelector>
-            <Button onClick={ () => {
-                document.querySelector("#char").classList.toggle("hidden")
-                }} > 
-                menu 
-            </Button>
+            <CharacterSelector id="charSelect">{ welcome } </CharacterSelector>
+
+            <div id="charList" className="hidden">
+                { displayNames }    
+            </div>
+            
+            <Button onClick={ toggle } > { buttonText } </Button>
 
     </DivStyle>
     )

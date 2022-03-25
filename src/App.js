@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Welcome from "./components/Welcome"
+import Character from "./components/Character"
+
 import axios from "axios"
 import styled from "styled-components"
 
-const App = () => {
+
+const App = (props) => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
 
@@ -25,11 +28,12 @@ text-shadow: 2px 6px 15px rgba(218, 254, 255, 0.88) ;
 
 `
 
+const [ characters, setCharacters ] = useState( [] );
 
   useEffect( () => {
     axios.get("https://swapi.dev/api/people")
     .then(res => {
-      console.log(res.data);
+      setCharacters(res.data);
     })
     .catch( err => console.error(err) )
   }, [] )
@@ -38,7 +42,10 @@ text-shadow: 2px 6px 15px rgba(218, 254, 255, 0.88) ;
     <div className="App">
       <H1 className="Header">STAR WARS: REVENGE OF REACT</H1>
 
-      <Welcome/>
+      <Welcome>
+        <Character characters={ characters } />
+      </Welcome>
+      
 
     </div>
   );
