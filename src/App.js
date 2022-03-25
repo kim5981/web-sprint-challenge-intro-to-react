@@ -10,7 +10,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="Header">Characters</h1>
+      <h1 className="Header">STAR WARS: REVENGE OF REACT</h1>
     </div>
   );
 }
