@@ -21,7 +21,7 @@ font-family: "Bungee", cursive;
 font-size: 5.5rem;
 line-height: 1;
 color: rgba(255, 64, 251, 0.61);
-text-shadow: 2px 2px 10px rgba(218, 254, 255, 0.88) ;
+text-shadow: 2px 6px 15px rgba(218, 254, 255, 0.88) ;
 
 `
 
