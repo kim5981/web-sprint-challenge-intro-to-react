@@ -31,7 +31,7 @@ text-shadow: 2px 6px 15px rgba(218, 254, 255, 0.88) ;
 const [ characters, setCharacters ] = useState( [] );
 
   useEffect( () => {
-    axios.get("https://swapi.dev/api/people")
+    axios.get("https://swapi.dev/api/people/")
     .then(res => {
       setCharacters(res.data);
     })
@@ -41,12 +41,7 @@ const [ characters, setCharacters ] = useState( [] );
   return (
     <div className="App">
       <H1 className="Header">STAR WARS: REVENGE OF REACT</H1>
-
-      <Welcome>
-        <Character characters={ characters } />
-      </Welcome>
-      
-
+      < Welcome characters={ characters }/>
     </div>
   );
 }

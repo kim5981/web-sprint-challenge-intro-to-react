@@ -19,8 +19,10 @@ export default function Welcome (props) {
     `
 
     const Button = styled.button`
-    width: 25%;
+    width: 20%;
     padding: 2%;
+    margin: 0 5% 0 5%;
+    margin-bottom: 70%;
     text-decoration: none;
     border: none;
     border-radius: 5%;
@@ -39,48 +41,58 @@ export default function Welcome (props) {
 
     // ------------------------------------------ FN'S + JS --------------------------------------
 
-    const { characters, character } = props;
+    
+    const { characters } = props;
     const [buttonText, setButtonText] = useState("menu")
-    const welcome = "Character Selector"
+    const [ names, setNames ] = useState("");
+    const welcome = "Choose Character"
 
-    // toggle hidden classes
-
-        const toggle = () => {
-            document.querySelector("#charSelect").classList.toggle("hidden")
-            document.querySelector("#charList").classList.toggle("hidden")
-            resetMenu(buttonText)
-        }
-
-        function resetMenu (text) {
-            if (text === "menu") {
-                setButtonText("reset")
-            } else if (text === "reset"){
-                return setButtonText("menu");
-            }
-            return buttonText;
-        }
     
 
-    // display names
-    function displayNames () {
-        characters.map( character => {
-            return <h2> { character.name } </h2> 
-        }) 
-    }
-    
+        // function resetMenu (text) {
+        //     if (text === "menu") {
+        //         setButtonText("reset")
+        //     } else if (text === "reset"){
+        //         return setButtonText("menu");
+        //     }
+        //     return buttonText;
+        // }
+
+        
+    // function addCharacters () {
+    //     setNames([...names, <Character characters={ characters }/>])
+    // }
+
+        
+
+
+    //charSelect = "Character Selector"
+
 // ------------------------------------     render to dom   ---------------------------------
     return (
-
+    <>
         <DivStyle>
-
-            <CharacterSelector id="charSelect">{ welcome } </CharacterSelector>
-
+           
+            <CharacterSelector id="charSelect"> {welcome} </CharacterSelector>
+           
             <div id="charList" className="hidden">
-                { displayNames }    
+                <Character characters={ characters }/>
             </div>
-            
-            <Button onClick={ toggle } > { buttonText } </Button>
-
+           
+    
     </DivStyle>
+    
+    <div>
+        <Button onClick={ () => {
+                document.querySelector("#charList").classList.toggle("hidden")
+           } } >
+                menu
+            </Button>
+
+            <Button onClick={ () => {
+                document.querySelector("#charSelect").classList.toggle("hidden")
+            } }> reset </Button>
+    </div>
+    </>
     )
 }
