@@ -1,7 +1,7 @@
 body {
   background-color: rgb(17, 0, 32);
   color: rgb(253, 166, 249);
-  margin: 0;
+  margin: 0 15% 0 15%;
   padding: 1%;
   font-family: 'Press Start 2P', cursive;
   background-image: url("./images/mill-falc.gif");

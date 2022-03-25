@@ -6,11 +6,11 @@ export default function Welcome (props) {
 
     // -------------------------------------- STYLING -------------------------------------
     const DivStyle = styled.div `
-    width: 50%;
+    width: 45%;
     background-color: rgb(47, 5, 81, 0.77);
     border-radius: 10px;
     padding: 5%;
-    margin: 10% 20% 20% 20%;
+    margin: 10% 20% 10% 20%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,7 +22,6 @@ export default function Welcome (props) {
     width: 20%;
     padding: 2%;
     margin: 0 5% 0 5%;
-    margin-bottom: 70%;
     text-decoration: none;
     border: none;
     border-radius: 5%;
@@ -37,6 +36,13 @@ export default function Welcome (props) {
     padding: 5%;
     line-height: 1.3;
     text-shadow: 2px 5px 15px rgba(255, 163, 253, 0.77) ;
+    `
+
+    const ButtonsDiv = styled.div`
+        display: flex;
+        justify-content: center;
+        margin-bottom: 80%;
+        margin: 0 10% 0 10%;
     `
 
     // ------------------------------------------ FN'S + JS --------------------------------------
@@ -82,7 +88,7 @@ export default function Welcome (props) {
     
     </DivStyle>
     
-    <div>
+    <ButtonsDiv>
         <Button onClick={ () => {
                 document.querySelector("#charList").classList.toggle("hidden")
            } } >
@@ -92,7 +98,7 @@ export default function Welcome (props) {
             <Button onClick={ () => {
                 document.querySelector("#charSelect").classList.toggle("hidden")
             } }> reset </Button>
-    </div>
+    </ButtonsDiv>
     </>
     )
 }
