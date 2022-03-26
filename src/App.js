@@ -15,11 +15,11 @@ const App = (props) => {
   // sync up with, if any.
 
 const H1 = styled.h1`
-margin: 10% 10% 0 10%;
+margin: 5% 15% 0 12%;
 display:flex;
 justify-content: center;
 align-content: center;
-width: 80%;
+width: 75%;
 font-family: "Bungee", cursive;
 font-size: 5.5rem;
 line-height: 1;

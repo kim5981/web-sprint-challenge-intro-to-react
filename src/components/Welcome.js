@@ -9,8 +9,8 @@ export default function Welcome (props) {
     width: 45%;
     background-color: rgb(47, 5, 81, 0.77);
     border-radius: 10px;
-    padding: 5%;
-    margin: 10% 20% 10% 20%;
+    padding: 3%;
+    margin: 5% 25% 5% 25%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,7 +21,7 @@ export default function Welcome (props) {
     const Button = styled.button`
     width: 20%;
     padding: 2%;
-    margin: 0 5% 0 5%;
+    margin: 0 10% 0 10%;
     text-decoration: none;
     border: none;
     border-radius: 5%;
@@ -40,8 +40,8 @@ export default function Welcome (props) {
     const ButtonsDiv = styled.div`
         display: flex;
         justify-content: center;
-        margin-bottom: 80%;
-        margin: 0 10% 0 10%;
+        margin-bottom: 90%;
+        margin: 0 25% 0 25%;
     `
 
     // ------------------------------------------ FN'S + JS --------------------------------------
