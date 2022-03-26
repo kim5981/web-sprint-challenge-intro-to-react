@@ -6,7 +6,7 @@ export default function Welcome (props) {
 
     // -------------------------------------- STYLING -------------------------------------
     const DivStyle = styled.div `
-    width: 45%;
+    width: 60%;
     background-color: rgb(47, 5, 81, 0.77);
     border-radius: 10px;
     padding: 5%;
@@ -31,7 +31,6 @@ export default function Welcome (props) {
     color: rgb(47, 5, 81, 0.77));
     `
 
-
     const CharacterSelector = styled.h1`
     padding: 5%;
     line-height: 1.3;
@@ -49,54 +48,33 @@ export default function Welcome (props) {
 
     
     const { characters } = props;
-    const [buttonText, setButtonText] = useState("menu")
     const [ names, setNames ] = useState("");
     const welcome = "Choose Character"
 
     
 
-        // function resetMenu (text) {
-        //     if (text === "menu") {
-        //         setButtonText("reset")
-        //     } else if (text === "reset"){
-        //         return setButtonText("menu");
-        //     }
-        //     return buttonText;
-        // }
-
-        
-    // function addCharacters () {
-    //     setNames([...names, <Character characters={ characters }/>])
-    // }
-
-        
-
-
-    //charSelect = "Character Selector"
+    const [divText, setDivText] = useState(welcome);
+    //grabs the div
 
 // ------------------------------------     render to dom   ---------------------------------
     return (
     <>
         <DivStyle>
            
-            <CharacterSelector id="charSelect"> {welcome} </CharacterSelector>
-           
-            <div id="charList" className="hidden">
-                <Character characters={ characters }/>
-            </div>
-           
+            <CharacterSelector id="charSelect"> {divText} </CharacterSelector>
+        
+          </DivStyle>
     
-    </DivStyle>
-    
+   
     <ButtonsDiv>
         <Button onClick={ () => {
-                document.querySelector("#charList").classList.toggle("hidden")
+                setDivText(<Character characters={ characters }/>);
            } } >
                 menu
             </Button>
 
             <Button onClick={ () => {
-                document.querySelector("#charSelect").classList.toggle("hidden")
+                setDivText(welcome)
             } }> reset </Button>
     </ButtonsDiv>
     </>
