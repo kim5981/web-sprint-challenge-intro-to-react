@@ -6,7 +6,7 @@ export default function Welcome (props) {
 
     // -------------------------------------- STYLING -------------------------------------
     const DivStyle = styled.div `
-    width: 60%;
+    width: 45%;
     background-color: rgb(47, 5, 81, 0.77);
     border-radius: 10px;
     padding: 5%;
@@ -46,12 +46,8 @@ export default function Welcome (props) {
 
     // ------------------------------------------ FN'S + JS --------------------------------------
 
-    
     const { characters } = props;
-    const [ names, setNames ] = useState("");
     const welcome = "Choose Character"
-
-    
 
     const [divText, setDivText] = useState(welcome);
     //grabs the div
