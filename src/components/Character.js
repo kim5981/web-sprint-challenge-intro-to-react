@@ -11,7 +11,6 @@ export default function Character (props) {
         font-size: 1.2rem;
         padding: 1.2%;
         line-height: 1.6;
-
     `
 
    return (
@@ -24,4 +23,3 @@ export default function Character (props) {
     </>
    )
     }
-

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Welcome from "./components/Welcome"
-import Character from "./components/Character"
 
 import axios from "axios"
 import styled from "styled-components"

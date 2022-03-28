@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import Character from "./Character"
 
 export default function Welcome (props) {
@@ -15,7 +15,6 @@ export default function Welcome (props) {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
     `
 
     const Button = styled.button`
@@ -44,24 +43,17 @@ export default function Welcome (props) {
         margin: 0 25% 0 25%;
     `
 
-    // ------------------------------------------ FN'S + JS --------------------------------------
-
+    // ------------------------------------------ JS --------------------------------------
     const { characters } = props;
     const welcome = "Choose Character"
-
     const [divText, setDivText] = useState(welcome);
-    //grabs the div
 
-// ------------------------------------     render to dom   ---------------------------------
     return (
     <>
         <DivStyle>
-           
             <CharacterSelector id="charSelect"> {divText} </CharacterSelector>
-        
           </DivStyle>
     
-   
     <ButtonsDiv>
         <Button onClick={ () => {
                 setDivText(<Character characters={ characters }/>);
