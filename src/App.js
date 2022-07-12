@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Welcome from "./components/Welcome"
+import Info from "./components/Info"
 
 import axios from "axios"
 import styled from "styled-components"
@@ -40,7 +42,13 @@ const [ characters, setCharacters ] = useState( [] );
   return (
     <div className="App">
       <H1 className="Header">STAR WARS: REVENGE OF REACT</H1>
-      < Welcome characters={ characters }/>
+      <Router>
+      <Routes>
+        <Route path="/" element={< Welcome characters={ characters }/>} />
+        <Route path="/char-info"  element={ <Info /> }/>
+      </Routes>
+      </Router>
+      
     </div>
   );
 }

@@ -1,16 +1,15 @@
 // Write your Character component here
-
+import React from "react"
 import styled from "styled-components";
-import { useHistory } from "react-router-dom"
+import { useNavigate} from "react-router-dom"
 import Info from "./Info"
 
 export default function Character (props) {
 
     const { characters } = props;
 
-    const displayInfo = () => {
-        <Info/>
-    }
+    const nav = useNavigate()
+
 
     const BUTTON = styled.button`
         textDecoration: none;
@@ -29,7 +28,7 @@ export default function Character (props) {
     <>
     {
         characters.map( character => {
-            return <BUTTON onClick={displayInfo}> { character.name }</BUTTON>
+            return <BUTTON onClick={() => nav("/char-info")}> { character.name }</BUTTON>
         } )
     }
     </>
