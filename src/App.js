@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Welcome from "./components/Welcome"
+import Character from './components/Character';
 import Info from "./components/Info"
 
 import axios from "axios"
@@ -45,6 +46,7 @@ const [ characters, setCharacters ] = useState( [] );
       <Router>
       <Routes>
         <Route path="/" element={< Welcome characters={ characters }/>} />
+        <Route path="/menu" element={ <Character/> } />
         <Route path="/char-info"  element={ <Info /> }/>
       </Routes>
       </Router>
