@@ -56,7 +56,7 @@ export default function Welcome (props) {
     
     <ButtonsDiv>
         <Button onClick={ () => {
-                setDivText(<Character characters={ characters }/>);
+                setDivText(<Character characters={ characters } divText={ divText }/>);
            } } >
                 menu
             </Button>
