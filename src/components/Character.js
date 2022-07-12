@@ -6,18 +6,24 @@ export default function Character (props) {
 
     const { characters } = props;
 
-    const H2 = styled.h2`
-    
-        font-size: 1.2rem;
-        padding: 1.2%;
-        line-height: 1.6;
+    const BUTTON = styled.button`
+        textDecoration: none;
+        border: none;
+        background: none;
+        font-size: 1.5rem;
+        color: rgb(234,163,255);
+        text-shadow: 2px 6px 12px rgba(218, 254, 255, 0.88) ;
+        font-family: 'Press Start 2P';
+        padding: 2%;
+        line-height: 1;
+        margin: 5%;
     `
 
    return (
     <>
     {
         characters.map( character => {
-            return <H2> { character.name }</H2>
+            return <BUTTON> { character.name }</BUTTON>
         } )
     }
     </>
