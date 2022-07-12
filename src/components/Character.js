@@ -1,7 +1,7 @@
 // Write your Character component here
 import React from "react"
 import styled from "styled-components";
-import { useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import Info from "./Info"
 
 export default function Character (props) {
