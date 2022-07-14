@@ -8,9 +8,9 @@ export default function Welcome (props) {
     const DivStyle = styled.div `
     width: 45%;
     background-color: rgb(47, 5, 81, 0.77);
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 3%;
-    margin: 5% 25% 5% 25%;
+    margin: 1.5% 25% 1.5% 25%;
     display: flex;
     align-items: center;
     justify-content: center;
